@@ -13,10 +13,17 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
-
+/**
+ * The main game loop called when the script is first loaded
+ */
 function runGame() {
-
+    // Creates two random numbers between 1 and 25
+    let num1 = Math.floor(Math.random() * 25) + 1;
+    let num2 = Math.floor(Math.random() * 25) + 1;
 }
+
+
+
 
 function checkAnswer() {
 
@@ -43,3 +50,4 @@ function displaySubtractQuestion() {
 function displayMultiplyQuestion() {
 
 }
+getElementById('operand1');

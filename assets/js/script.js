@@ -12,12 +12,19 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
+    document.getElementById('answer-box').addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            checkAnswer();
+        }
+    });
     runGame("addition");
 });
 /**
  * The main game loop called when the script is first loaded
  */
 function runGame(gameType) {
+    document.getElementById('answer-box').value = "";
+    document.getElementById('answer-box').focus();
     // Creates two random numbers between 1 and 25
     let num1 = Math.floor(Math.random() * 25) + 1;
     let num2 = Math.floor(Math.random() * 25) + 1;
@@ -35,6 +42,7 @@ function runGame(gameType) {
         alert(`Unknown game type: ${gameType}`);
         throw `Unknown game type: ${gameType}. Aborting!`;
     }
+
 }
 
 
@@ -97,4 +105,3 @@ function displayMultiplyQuestion(operand1, operand2) {
     document.getElementById('operand2').textContent = operand2;
     document.getElementById('operator').textContent = "x";
 }
-getElementById('operand1');
